@@ -8,6 +8,11 @@ var options = {
 };
 
 var server = spdy.createServer(options, function(req, res) {
+  if(!!req.isSpdy === false ) {
+    res.writeHead(200);
+    res.end("Your browser doesn't support SPDY");
+    return;
+  }
   var url_ = req.client.headers.url.split(/[?#]/)[0];
 
   // console.log("streamID: "+req.streamID + ", url: "+url_);
