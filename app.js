@@ -10,7 +10,7 @@ var options = {
 var server = spdy.createServer(options, function(req, res) {
   var url_ = req.client.headers.url.split(/[?#]/)[0];
 
-  console.log("streamID: "+req.streamID + ", url: "+url_);
+  // console.log("streamID: "+req.streamID + ", url: "+url_);
 
   if(url_ === "/") {
     var mesg_ = req.isSpdy ? "Hello SPDY!" : "Hello HTTPS"
