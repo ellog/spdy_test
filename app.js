@@ -26,7 +26,6 @@ var mimeTypes = {
 var server = spdy.createServer(options, function(req, res) {
   var url_ = req.url.split(/[?#]/)[0];
 
-  console.log("url: "+url_);
 
   if(url_ === "/") {
     // Displays current transfer mode
